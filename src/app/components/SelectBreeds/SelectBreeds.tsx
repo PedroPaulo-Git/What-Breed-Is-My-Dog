@@ -5,13 +5,13 @@ import { ButtonSearch } from '../ButtonSearch'
 
 interface SelectBreedsProps {
     onFetchDogPhoto: (breed: string) => void;
-    fetchDogPhoto: () => void;
+   
   }
 
-export const SelectBreeds: React.FC<SelectBreedsProps> =  ({onFetchDogPhoto,fetchDogPhoto }) => {
+export const SelectBreeds: React.FC<SelectBreedsProps> =  ({onFetchDogPhoto }) => {
  
   const [breeds, setBreeds] = useState<string[]>([]);
-  const [selectedBreed, setSelectedBreed] = useState<string>("");
+  const [selectedBreed, setSelectedBreed] = useState<string>("affenpinscher");
 
   useEffect(() => {
 

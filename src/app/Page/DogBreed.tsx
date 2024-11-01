@@ -14,7 +14,7 @@ export const DogBreed = () => {
     
     return (
         <div>
-            <div className='flex flex-col gap-20 justify-center md:flex md:flex-col md:gap-8 lg:flex lg:flex-row  m-10'>
+            <div className='flex flex-col gap-20 justify-center md:flex md:gap-8 lg:flex lg:justify-start lg:flex-row  lg:m-10'>
                 <LeftSide  selectedBreed={selectedBreed} onFetchDogPhoto={handleFetchDogPhoto} />
                 <RightSide selectedBreed={selectedBreed} />
             </div>

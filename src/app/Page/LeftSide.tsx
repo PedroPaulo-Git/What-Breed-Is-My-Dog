@@ -9,9 +9,9 @@ interface LeftSideProps {
 export const LeftSide: React.FC<LeftSideProps> = ({ selectedBreed, onFetchDogPhoto }) => {
 
   return (
-    <div className='mx-10 lg:mx-32'>
+    <div className='mx-8 sm:mx-12 '>
       <Header/>
-        <div className='flex flex-col gap-8 mt-20 '>
+        <div className='flex flex-col gap-8 lg:mt-20 mt-12'>
             <span className='flex items-center text-gray-500'>
             <span className='h-[0.1rem]  bg-gray-400 w-10 left pr-12 mr-5'></span>
             <p className=''>What Breed Is Your Dog?</p>

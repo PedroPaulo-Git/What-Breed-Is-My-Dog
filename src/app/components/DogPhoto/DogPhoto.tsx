@@ -32,10 +32,10 @@ export const DogPhoto: React.FC<DogPhotoProps> = ({ selectedBreed }) => {
   }, [selectedBreed]); // Atualiza sempre que selectedBreed mudar
 
   return (
-    <div>
+    <div className="w-full">
       {selectedBreed ? (
         <div className="border-2 p-4  ">
-          <div className="w-[22rem] h-[30rem] relative">
+          <div className="w-full h-full lg:w-[22rem] lg:h-[30rem] relative">
             <div>
               {dogPhoto && (
                 <Image
@@ -44,13 +44,13 @@ export const DogPhoto: React.FC<DogPhotoProps> = ({ selectedBreed }) => {
                   layout="responsive"
                   width={100}
                   height={100}
-                  className="object-contain h-full"
+                  className="object-cover h-[80%]"
                 />
               )}
             </div>
           </div>
-          <button className="my-2" onClick={fetchDogPhoto}>
-            Buscar nova foto
+          <button className="my-2 underline flex " onClick={fetchDogPhoto}>
+            New Photo <p className="">👈</p>
           </button>
         </div>
       ) : (
