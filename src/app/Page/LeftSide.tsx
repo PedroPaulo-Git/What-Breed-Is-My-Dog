@@ -15,6 +15,7 @@ export const LeftSide: React.FC<LeftSideProps> = ({ selectedBreed, onFetchDogPho
             <span className='flex items-center text-gray-500'>
             <span className='h-[0.1rem]  bg-gray-400 w-10 left pr-12 mr-5'></span>
             <p className=''>What Breed Is Your Dog?</p>
+            
             </span>
             <h1 className='text-5xl max-w-[30rem] lg:text-7xl font-semibold lg:max-w-[50rem]'>
             Discover Your Dog's Breed!

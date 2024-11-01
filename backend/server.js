@@ -16,9 +16,10 @@ app.get('/api/breeds', async (req, res) => {
   }
 });
 
-app.get('/api/breeds/image', async (req, res) => {
+app.get('/api/breeds/image/:breed/random', async (req, res) => {
+    const { breed } = req.params;
     try {
-      const response = await axios.get('https://dog.ceo/api/breeds/image/random');
+      const response = await axios.get(`https://dog.ceo/api/breed/${breed}/images/random`);//https://dog.ceo/api/breed/hound/images
       res.json(response.data);
     } catch (error) {
       res.status(500).json({ message: 'Erro ao obter as raças de cães.' });

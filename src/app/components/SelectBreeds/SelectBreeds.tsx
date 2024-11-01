@@ -2,11 +2,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ButtonSearch } from '../ButtonSearch'
+
 interface SelectBreedsProps {
     onFetchDogPhoto: (breed: string) => void;
+    fetchDogPhoto: () => void;
   }
 
-export const SelectBreeds: React.FC<SelectBreedsProps> =  ({onFetchDogPhoto }) => {
+export const SelectBreeds: React.FC<SelectBreedsProps> =  ({onFetchDogPhoto,fetchDogPhoto }) => {
  
   const [breeds, setBreeds] = useState<string[]>([]);
   const [selectedBreed, setSelectedBreed] = useState<string>("");
@@ -32,18 +34,21 @@ export const SelectBreeds: React.FC<SelectBreedsProps> =  ({onFetchDogPhoto }) =
   }, []);
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedBreed(event.target.value); // Atualiza a raça selecionada
+    setSelectedBreed(event.target.value); 
+    
   };
 
   const handleSearchClick = () => {
     onFetchDogPhoto(selectedBreed); // Chama a função para buscar a foto da raça selecionada
-  };
+    console.log('dog selected', selectedBreed);
+};
+  
   return (
     <div>
       <label htmlFor="breed-select">Choose Breed :</label>
       <select
         id="breed-select"
-        className="text-[#a0501b]"
+        className="text-[#a0501b] mb-8"
         value={selectedBreed}
         onChange={handleSelectChange}
       >
@@ -54,7 +59,7 @@ export const SelectBreeds: React.FC<SelectBreedsProps> =  ({onFetchDogPhoto }) =
           </option>
         ))}
       </select>
-      {selectedBreed && <p>Você selecionou: {selectedBreed}</p>}
+      
       <ButtonSearch handleFetchDogPhoto={handleSearchClick} /> 
     </div>
   );

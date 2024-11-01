@@ -9,6 +9,7 @@ export const DogBreed = () => {
 
     const handleFetchDogPhoto = (breed: string) => {
       setSelectedBreed(breed);
+      console.log(breed)
     };
     
     return (
