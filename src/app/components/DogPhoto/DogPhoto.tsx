@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useCallback  } from "react";
 import axios from "axios";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ interface DogPhotoProps {
 export const DogPhoto: React.FC<DogPhotoProps> = ({ selectedBreed }) => {
   const [dogPhoto, setDogPhoto] = useState<string | null>(null);
 
-  const fetchDogPhoto = async () => {
+  const fetchDogPhoto = useCallback(async () => {
     if (selectedBreed) {
       try {
         const response = await axios.get(
@@ -25,11 +25,11 @@ export const DogPhoto: React.FC<DogPhotoProps> = ({ selectedBreed }) => {
     } else {
       console.log("something wrong ", selectedBreed, dogPhoto);
     }
-  };
-
+  }, [selectedBreed]);
+  
   useEffect(() => {
     fetchDogPhoto();
-  }, [selectedBreed]); // Atualiza sempre que selectedBreed mudar
+  }, [fetchDogPhoto]); 
 
   return (
     <div className="w-full">
@@ -44,7 +44,7 @@ export const DogPhoto: React.FC<DogPhotoProps> = ({ selectedBreed }) => {
                   layout="responsive"
                   width={100}
                   height={100}
-                  className="object-cover h-[80%]"
+                  className="object-cover h-[80%] lg:max-h-[29rem]"
                 />
               )}
             </div>

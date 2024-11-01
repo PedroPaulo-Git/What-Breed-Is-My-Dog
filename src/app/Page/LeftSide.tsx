@@ -1,12 +1,11 @@
 import React from 'react';
 import { Header } from '../components/Header'
-import { ButtonSearch } from '../components/ButtonSearch'
 import { SelectBreeds } from '../components/SelectBreeds/SelectBreeds';
 interface LeftSideProps {
     selectedBreed: string | null; // Define o tipo da prop
     onFetchDogPhoto: (breed: string) => void; // Adicione esta linha
 }
-export const LeftSide: React.FC<LeftSideProps> = ({ selectedBreed, onFetchDogPhoto }) => {
+export const LeftSide: React.FC<LeftSideProps> = ({ onFetchDogPhoto }) => {
 
   return (
     <div className='mx-8 sm:mx-12 '>
