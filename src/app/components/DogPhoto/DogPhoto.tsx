@@ -5,13 +5,9 @@ import Image from "next/image";
 
 interface DogPhotoProps {
   selectedBreed: string | null;
-  onFetchDogPhoto: () => void;
 }
 
-export const DogPhoto: React.FC<DogPhotoProps> = ({
-  selectedBreed,
-  onFetchDogPhoto,
-}) => {
+export const DogPhoto: React.FC<DogPhotoProps> = ({ selectedBreed }) => {
   const [dogPhoto, setDogPhoto] = useState<string | null>(null);
 
   const fetchDogPhoto = async () => {
@@ -38,18 +34,24 @@ export const DogPhoto: React.FC<DogPhotoProps> = ({
   return (
     <div>
       {selectedBreed ? (
-        <div>
-          <div className="border-2 p-4">
-            {dogPhoto && (
-              <Image
-                src={dogPhoto}
-                alt={`Foto de um ${selectedBreed}`}
-                width={300}
-                height={200}
-              />
-            )}
-            <button onClick={fetchDogPhoto}>Buscar nova foto</button>
+        <div className="border-2 p-4  ">
+          <div className="w-[22rem] h-[30rem] relative">
+            <div>
+              {dogPhoto && (
+                <Image
+                  src={dogPhoto}
+                  alt={`Foto de um ${selectedBreed}`}
+                  layout="responsive"
+                  width={100}
+                  height={100}
+                  className="object-contain h-full"
+                />
+              )}
+            </div>
           </div>
+          <button className="my-2" onClick={fetchDogPhoto}>
+            Buscar nova foto
+          </button>
         </div>
       ) : (
         <></>
