@@ -17,7 +17,7 @@ export const LeftSide: React.FC<LeftSideProps> = ({ onFetchDogPhoto }) => {
             
             </span>
             <h1 className='text-5xl max-w-[30rem] lg:text-7xl font-semibold lg:max-w-[50rem]'>
-            Discover Your Dog's Breed!
+            Discover Your Dog&apos;s Breed!
             </h1>
             <p className='max-w-[30rem] text-gray-500 lg:max-w-[40rem]'>Explore a Diverse Collection of Beautiful Photos Featuring the Breed You Think Most Accurately Represents Your Dog’s Unique Look and Personality!</p>
             
