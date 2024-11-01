@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
 import { Header } from '../components/Header'
 import { ButtonSearch } from '../components/ButtonSearch'
+import { SelectBreeds } from '../components/SelectBreeds/SelectBreeds';
 
 export const LeftSide = () => {
+
   return (
     <div className='ml-60'>
       <Header/>
@@ -15,7 +17,12 @@ export const LeftSide = () => {
             Discover Your Dog's Breed!
             </h1>
             <p className='text-gray-500 lg:max-w-[40rem]'>Explore a Diverse Collection of Beautiful Photos Featuring the Breed You Think Most Accurately Represents Your Dog’s Unique Look and Personality!</p>
+            
+            <div className='flex flex-col gap-8 mt-8' >
+            <SelectBreeds/>
             <ButtonSearch/>
+            </div>
+
         </div>
     </div>
   )
