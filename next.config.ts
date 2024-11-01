@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  images:{
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.dog.ceo',
+        port: '', // deixe vazio se não houver uma porta específica
+        pathname: '/**', // permite qualquer caminho
+      },
+    ],
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

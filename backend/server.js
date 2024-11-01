@@ -16,6 +16,16 @@ app.get('/api/breeds', async (req, res) => {
   }
 });
 
+app.get('/api/breeds/image', async (req, res) => {
+    try {
+      const response = await axios.get('https://dog.ceo/api/breeds/image/random');
+      res.json(response.data);
+    } catch (error) {
+      res.status(500).json({ message: 'Erro ao obter as raças de cães.' });
+    }
+  });
+
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });

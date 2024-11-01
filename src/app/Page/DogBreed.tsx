@@ -1,15 +1,22 @@
-import React from 'react'
-import { LeftSide } from './LeftSide'
-import { RightSide } from './RightSide'
+"use client"; // Adicione esta linha
+
+import React, { useState } from 'react';
+import { LeftSide } from './LeftSide';
+import { RightSide } from './RightSide';
 
 export const DogBreed = () => {
-  return (
-    <div>
-        <div className='flex m-10'>
-        <LeftSide/>
-        <RightSide/>
+    const [selectedBreed, setSelectedBreed] = useState<string | null>(null);
+
+    const handleFetchDogPhoto = (breed: string) => {
+      setSelectedBreed(breed);
+    };
+    
+    return (
+        <div>
+            <div className='flex m-10'>
+                <LeftSide  selectedBreed={selectedBreed} onFetchDogPhoto={handleFetchDogPhoto} />
+                <RightSide selectedBreed={selectedBreed} />
+            </div>
         </div>
-      
-    </div>
-  )
-}
+    );
+};

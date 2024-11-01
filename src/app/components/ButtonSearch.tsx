@@ -1,9 +1,14 @@
 import React from 'react'
 
-export const ButtonSearch = () => {
+interface ButtonSearchProps {
+    handleFetchDogPhoto: () => void; // Define o tipo da função
+  }
+
+export const ButtonSearch : React.FC<ButtonSearchProps> =  ({ handleFetchDogPhoto }) => {
   return (
     <div>
         <a
+         onClick={handleFetchDogPhoto}
   className="group relative inline-block text-sm font-medium text-[#EC9D59] focus:outline-none focus:ring active:text-indigo-500"
   href="#"
 >
